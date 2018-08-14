@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>post</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="postagem">
+
+    <div class="post-text" [innerHTML]="postagem.title.rendered" padding></div>
+    <p class="post-text" [innerHTML]="postagem.content.rendered" padding></p>
+
+    <ion-row>
+      <ion-col>
+        <ion-icon ios="ios-calendar" md="md-caledar"></ion-icon>
+        {{postagem.date.split('T')[0] | date:' d MMM , y'}}
+      </ion-col>
+      <ion-col>
+        <ion-icon ios="ios-person" md="md-person"></ion-icon>
+        {{user}}
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+       Bem Vindo
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <img src="assets/imgs/logo.png" class="logo" >
+  
+    <ion-list>
+   
+    <div class="col-sm-4">
+      <ion-row center>
+        <ion-item>
+          <ion-input  placeholder="Usuário" type="text" [(ngModel)]="usuario.email" ></ion-input>
+        </ion-item>
+      </ion-row>
+    </div>
+
+    <ion-item>
+      <ion-input placeholder="Senha" type="password" [(ngModel)]="usuario.senha" ></ion-input>
+    </ion-item>
+
+    <p class="textos">
+      <button ion-button color="primary" [disabled]=" !usuario.email || !usuario.senha" (click)="entrar()" round>Sign In</button>
+    </p>
+
+    <p class="textos">
+      <button ion-button color="primary" (click)="enterFacebook()" round>
+        <ion-icon name="logo-facebook">
+          logar 
+        </ion-icon>
+      </button>
+    </p>
+
+    <p class="textos">
+        <a class="TextLink" (click)="cadastrar()" >cadastrar</a>
+    </p>
+
+    </ion-list>
+  
+</ion-content>
+  

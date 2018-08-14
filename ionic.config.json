@@ -1,0 +1,7 @@
+{
+  "name": "ApiNova",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

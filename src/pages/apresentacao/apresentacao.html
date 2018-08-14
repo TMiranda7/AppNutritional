@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>apresentacao</ion-title>
+    <ion-buttons end>
+      <button (click)="saindo()" ion-button ion-only >
+        <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+<ion-item *ngIf="temfoto">
+  <ion-thumbnail item-start>
+    <img src="{{facebook.fotoUrl}}">
+  </ion-thumbnail>
+  <h2>{{facebook.login}}</h2>
+  <p>{{email}}</p>
+</ion-item>
+
+<ion-item *ngIf="!temfoto">
+  <ion-thumbnail item-start>
+    <img src="assets/imgs/fotoPerfil.png">
+  </ion-thumbnail>
+  <h2> Usuario </h2>
+  <p>{{email}}</p>
+</ion-item>
+
+</ion-content>

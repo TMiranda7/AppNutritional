@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>cadastro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <div class="col-sm-4">
+      
+      <ion-row center>
+       <ion-item>
+         <ion-input placeholder="email" type="text" [(ngModel)]="email"></ion-input>
+       </ion-item>
+      </ion-row>
+    </div>
+      <ion-item>
+        <ion-input placeholder="Senha" type="password" [(ngModel)]="senha" ></ion-input>
+      </ion-item>
+    </ion-list>
+  
+    <button ion-button round [disabled]="!email || !senha" (click)="cadastrarNew()"> cadastrar </button>
+
+  </ion-content>
