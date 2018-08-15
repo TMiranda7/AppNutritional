@@ -12,12 +12,30 @@ export class CadastroPage {
    public email;
    public senha;
 
+   tabBar: any;
+   
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams ,
     public toastCtrl:ToastController,
     public fire : AngularFireAuth  
-  ) { }
+  ) {
+      this.tabBar = document.querySelector(".show-tabbar") ;
+   }
+
+   ionViewWillEnter(){
+     let tab = document.querySelectorAll(".show-tabbar") ;
+     if (tab == null){
+       this.tabBar.style.display='none';
+     }
+   }
+
+   ionViewWillLeave(){
+    let tab = document.querySelectorAll(".show-tabbar");
+    if (tab !== null){
+      Object.keys(tab).map( res => tab[res].style.display = 'none' );
+    }
+   }
 
   cadastrarNew(){
     console.log('Teste')

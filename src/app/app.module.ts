@@ -1,3 +1,4 @@
+import { TabsPage } from './../pages/tabs/tabs';
 import { LeiaMaisPage } from './../pages/leia-mais/leia-mais';
 import { DicasPage } from './../pages/dicas/dicas';
 import { BrowserModule } from '@angular/platform-browser';
@@ -32,7 +33,8 @@ const configAuth = {
     HomePage,
     ApresentacaoPage,
     DicasPage,
-    LeiaMaisPage
+    LeiaMaisPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ const configAuth = {
     HomePage,
     ApresentacaoPage,
     DicasPage,
-    LeiaMaisPage
+    LeiaMaisPage,
+    TabsPage
   ],
   providers: [
     StatusBar,

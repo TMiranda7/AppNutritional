@@ -20,7 +20,9 @@ export class DicasPage {
     public fire : AngularFireAuth,
     public loadingCtrl : LoadingController,
     public servico : ServiceUserProvider
-  ) {  }
+  ) { 
+      
+   }
 
   ionViewWillEnter() {
     this.morePage = true;

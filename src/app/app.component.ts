@@ -1,3 +1,4 @@
+import { TabsPage } from './../pages/tabs/tabs';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,7 +23,7 @@ export class MyApp {
   ){
     const autorized = atAuth.authState.subscribe(usuario =>{
       if(usuario){
-        this.rootPage = ApresentacaoPage;
+        this.rootPage = TabsPage;
         autorized.unsubscribe();
       }
       else{

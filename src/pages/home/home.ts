@@ -1,3 +1,4 @@
+import { TabsPage } from './../tabs/tabs';
 import { DicasPage } from './../dicas/dicas';
 import { ServiceUserProvider } from './../../providers/service-user/service-user';
 import { Component } from '@angular/core';
@@ -8,6 +9,7 @@ import { ApresentacaoPage } from '../apresentacao/apresentacao';
 import { CadastroPage } from './../cadastro/cadastro';
 import { AngularFireAuth } from 'angularfire2/auth';
 import firebase from 'firebase'
+import { SlidesPage } from '../slides/slides';
 
 
 @Component({
@@ -17,7 +19,7 @@ import firebase from 'firebase'
 export class HomePage {
   usuario:user;
   
-
+  tabElement : any;
 
   constructor(
     public navCtrl: NavController,
@@ -29,6 +31,23 @@ export class HomePage {
     this.usuario.email 
     this.usuario.senha
 
+    this.tabElement = document.querySelector('.show-tabbar');
+  }
+
+  ngAfterViewInit(){
+    let tabBar = document.querySelectorAll('.show-tabbar');
+    if (tabBar !== null) {
+      Object.keys(tabBar).map( res => tabBar[res].style.display = 'none') ;
+    
+    }
+  }
+
+  ionViewWillLeave(){
+    let tabBar = document.querySelectorAll('.show-tabbar');
+      if( tabBar !== null ){
+        Object.keys(tabBar).map( res => tabBar[res].style.display = 'none')
+      }
+
   }
 
   entrar(){
@@ -37,8 +56,7 @@ export class HomePage {
     .then((data:any) => {
       console.log(data)
       this.servico.logar(this.usuario.email,this.usuario.senha) ;
-      //this.navCtrl.setRoot(ApresentacaoPage);   
-      this.navCtrl.setRoot(DicasPage);
+      this.navCtrl.setRoot(SlidesPage);   
     })
     .catch((error:any)=> this.erroLogin(error) )
   }
@@ -66,8 +84,8 @@ export class HomePage {
     this.fire.auth.signInWithPopup( new firebase.auth.FacebookAuthProvider).then(data =>{
       
       console.log(data);
-//       this.navCtrl.setRoot(ApresentacaoPage);
-      this.navCtrl.setRoot(DicasPage);
+       this.navCtrl.setRoot(SlidesPage.name);
+//      this.navCtrl.setRoot(DicasPage);
       
     })
   }
